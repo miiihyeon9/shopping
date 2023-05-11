@@ -38,6 +38,7 @@ header{
 
 .offCanGroup{
     /* display: none; */
+    position: fixed;
     border-right: 1px solid #000;
     float: left;
     width:200px;
@@ -53,6 +54,7 @@ header{
 .offCanGroup.active{
     /* display: */
     float: left;
+    position: fixed;
     border-right: 1px solid #000;
     width:200px;
     list-style: none;
@@ -91,11 +93,21 @@ header{
 
 
 .contentBox{
-    display: flex;
+    display: grid;
+    grid-template-columns: 2fr 10fr;
 }
 
 .carouselImg{
     width: 600px;
     height:400px;
     object-fit: cover;
+}
+
+
+.ListGroup{
+    padding: 30px;
+}
+
+.cardItems{
+    padding-top:30px;
 }

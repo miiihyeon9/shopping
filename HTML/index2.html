@@ -14,10 +14,10 @@
     <!-- ! 네비게이션 바 -->
 
  <header>
-        <nav class="navbar navbar-expand-lg navbar-light bg-light ">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
             <div class="container-fluid">
                 <!-- 로고 -->
-                <a class="navbar-brand mx-auto shop_name" href="#">WEVER</a>
+                <a class="navbar-brand mx-auto shop_name" href="#">SHOP</a>
                 <!-- 화면 줄였을 때 나타나는 메뉴 버튼  -->
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon navbar-light bg-light "></span>
@@ -68,7 +68,11 @@
 
 <!-- 사이드바 -->
     <div class="contentBox">
+        
+        <div>
         <nav class="offCanGroup">
+            <br>
+            <br>
             <p class="sideTitle">Outer</p>
                 <li><a class="sideList" href="#">Coat</a></li>
                 <li><a class="sideList" href="#">Jacket</a></li>
@@ -90,18 +94,19 @@
                 <li ><a class="sideList" href="#">Belt</a></li>
                 <li ><a class="sideList" href="#">Shoes</a></li>
                 <li ><a class="sideList" href="#">Others</a></li>
-        </nav>
+            </nav>
+        </div>
 
         <!-- 캐러셀 -->
         <div class="ListGroup">
             <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
                 <div class="carousel-inner">
-                <div class="carousel-item active carouselSize" data-bs-interval="10000">
+                <div class="carousel-item active carouselSize" data-bs-interval="3000">
                     <img src="../img/pic1.jpg" class="card-img-top carouselImg" alt="...">
                 </div>
-                <div class="carousel-item carouselSize" data-bs-interval="2000">
+                <div class="carousel-item carouselSize" data-bs-interval="3000">
                     <img src="../img/pic2.jpg" class="card-img-top carouselImg" alt="...">          </div>
-                <div class="carousel-item">
+                <div class="carousel-item" data-bs-interval="3000">
                     <img src="../img/pic3.jpg" class="card-img-top carouselImg" alt="...">          </div>
                 </div>
                 <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
@@ -118,11 +123,11 @@
 
 
                 <!-- !카드 (grid)-->
-            <div class="container items">
+            <div class="container ">
                 <div class="row row-xxl-4">
-                    <div class="col d-flex justify-content-center" >
+                    <div class="col d-flex justify-content-center cardItems" >
                         <div class="card" style="width: 18rem;">
-                            <img src="../img/pic1.jpg" class="card-img-top" alt="...">
+                            <img src="../img/고라파덕.jpg" class="card-img-top" alt="...">
                             <div class="card-body">
                                 <h5 class="card-title">고라파덕</h5>
                                 <p class="card-text">파덕?</p>
@@ -133,9 +138,9 @@
                         </div>
                     </div>
 
-                    <div class="col d-flex justify-content-center">
+                    <div class="col d-flex justify-content-center cardItems">
                         <div class="card" style="width: 18rem;">
-                            <img src="../img/pic2.jpg" class="card-img-top" alt="...">
+                            <img src="../img/고라파덕.jpg" class="card-img-top" alt="...">
                                 <div class="card-body">
                                     <h5 class="card-title">고라파덕</h5>
                                     <p class="card-text">파아덕?</p>
@@ -146,9 +151,9 @@
                         </div>
                     </div>  
                 
-                    <div class="col d-flex justify-content-center">
+                    <div class="col d-flex justify-content-center cardItems">
                         <div class="card" style="width: 18rem;">
-                            <img src="../img/pic3.jpg" class="card-img-top" alt="...">
+                            <img src="../img/고라파덕.jpg" class="card-img-top" alt="...">
                             <div class="card-body">
                                 <h5 class="card-title">고라파덕</h5>
                                 <p class="card-text">파덕파아덕?</p>
@@ -159,9 +164,9 @@
                         </div>
                     </div>
 
-                    <div class="col d-flex justify-content-center">
+                    <div class="col d-flex justify-content-center cardItems">
                         <div class="card" style="width: 18rem;">
-                            <img src="고라파덕.jpg" class="card-img-top" alt="...">
+                            <img src="../img/고라파덕.jpg" class="card-img-top" alt="...">
                             <div class="card-body">
                                 <h5 class="card-title">고라파덕</h5>
                                 <p class="card-text">파덕파덕~</p>
@@ -172,9 +177,45 @@
                         </div>
                     </div>
                     
-                    <div class="col d-flex justify-content-center">
+                    <div class="col d-flex justify-content-center cardItems">
                         <div class="card" style="width: 18rem;">
-                            <img src="고라파덕.jpg" class="card-img-top" alt="...">
+                            <img src="../img/고라파덕.jpg" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">고라파덕</h5>
+                                <p class="card-text">파더어억!!!</p>
+                                <button type="button" class="btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                    데려가기
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col d-flex justify-content-center cardItems">
+                        <div class="card" style="width: 18rem;">
+                            <img src="../img/고라파덕.jpg" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">고라파덕</h5>
+                                <p class="card-text">파더어억!!!</p>
+                                <button type="button" class="btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                    데려가기
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col d-flex justify-content-center cardItems">
+                        <div class="card" style="width: 18rem;">
+                            <img src="../img/고라파덕.jpg" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">고라파덕</h5>
+                                <p class="card-text">파더어억!!!</p>
+                                <button type="button" class="btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                    데려가기
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col d-flex justify-content-center cardItems">
+                        <div class="card" style="width: 18rem;">
+                            <img src="../img/고라파덕.jpg" class="card-img-top" alt="...">
                             <div class="card-body">
                                 <h5 class="card-title">고라파덕</h5>
                                 <p class="card-text">파더어억!!!</p>
