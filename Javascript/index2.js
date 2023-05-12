@@ -9,5 +9,7 @@ function menu(){
     // console.log(sideList);
 }
 
-let navBtn = document.querySelector('.navBtn');
+const navBtn = document.querySelector('.navBtn');
 navBtn.addEventListener('click',menu);
+
+

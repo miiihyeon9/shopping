@@ -1,7 +1,7 @@
 body{
     margin : 0;
     padding : 0;
-    background-color: #F8F9FA;
+    background-color: #e2e2e2;
     box-sizing: content-box;
 }
 
@@ -14,9 +14,9 @@ body{
     padding-top: 20px;
 }
 
-#line{
+/* #line{
     border: 1px solid #000;
-}
+} */
 
 
 .navBtn{
@@ -31,21 +31,21 @@ body{
     background-color: #F8F9FA;
 }
 
-header{
-    border-bottom: 1px solid #e2e2e2;
-}
+/* header{
+    border-bottom: 1px solid #000;
+} */
 
 
 .offCanGroup{
     /* display: none; */
     position: fixed;
-    border-right: 1px solid #000;
+    border-right: 1px solid #e2e2e2;
     float: left;
     width:200px;
     list-style: none;
     height:100vh;
     opacity:0;
-    padding: 0 20px;
+    padding-left:20px;
     transition: opacity 0.5s;
     /* text-decoration: none; */
 
@@ -55,13 +55,13 @@ header{
     /* display: */
     float: left;
     position: fixed;
-    border-right: 1px solid #000;
+    border-right: 1px solid #e2e2e2;
     width:200px;
     list-style: none;
     height:100vh;
     z-index: 999;
     opacity:1;
-    padding: 0 20px;
+    padding-left: 0 20px;
     list-style: none;
     transition: opacity 0.5s;
     /* text-decoration: none; */
@@ -94,13 +94,18 @@ header{
 
 .contentBox{
     display: grid;
-    grid-template-columns: 2fr 10fr;
+    grid-template-columns: 200px auto;
+    background-color: #F8F9FA;
+    position: absolute;
+    top :60px;
+    
 }
 
-.carouselImg{
-    width: 600px;
-    height:400px;
-    object-fit: cover;
+.carouselImgBox{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    height: 400px;
+    padding : 20px;
 }
 
 
@@ -110,4 +115,8 @@ header{
 
 .cardItems{
     padding-top:30px;
+}
+
+.carouselImg{
+    object-fit: contain;
 }
