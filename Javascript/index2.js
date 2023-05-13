@@ -1,15 +1,29 @@
+const navBtn = document.querySelector('.navBtn');
+let sideList = document.getElementsByClassName('sideList');
+
 function menu(){
-    // let menu = document.querySelector('.offCanGroup');
     let sideMenu = document.querySelector('.offCanGroup');
-    // let sideList = document.querySelector('.offCanList');
-    // menu.classList.toggle('active');
-    
     sideMenu.classList.toggle('active');
-    // sideList.classList.toggle('active');
-    // console.log(sideList);
 }
 
-const navBtn = document.querySelector('.navBtn');
+function sideListOver(){
+    this.style.color ="#FF6347";
+}
+function sideListOut(){
+    this.style.color ="black";
+}
+
 navBtn.addEventListener('click',menu);
+
+
+for (let i = 0; i < sideList.length; i++) {
+  sideList[i].addEventListener('mouseover', sideListOver);
+  sideList[i].addEventListener('mouseout',sideListOut);
+}
+
+
+
+
+
 
 

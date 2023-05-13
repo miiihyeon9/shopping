@@ -2,18 +2,18 @@
 namespace application\controller;
 
 use application\util\UrlUtil;
-
 use \AllowDynamicProperties;
 #[AllowDynamicProperties]
 class Controller{
     protected $model;
     private static $modelList=[];// 똑같은 모델이지만 각 메모리를 갖고 있기 때문에 호출할 때 메모리의 사용량을 줄이기 위해(서버부하를 줄이기 위해) static 사용
-    private static $arrNeedAuth = ["product/list"];
+    private static $arrNeedAuth = ["product/list"];  // 접속권한 권한 필요 
     // 생성자
     public function __construct($identityName,$action){
         // session start 
         if(!(isset($_SESSION))){
             session_start();
+
         }
         // 유저 로그인 및 권한 체크 
         $this->chkAuthorization();
@@ -57,13 +57,14 @@ class Controller{
 
         //$this->key는 해당 객체에 있는 프로퍼티를
         // $this->$key 는 지금 객체의 에러메세지를 
-        $this->$key = $val;
+        $this->$key = $val; //!이때 생성되는 객체의 타입은 함수 앞에 쓴 것과 타입이 똑같은건지 (public, protected, private)
     }
 
     // 유저 권한 체크 메소드
     protected function chkAuthorization(){
         $urlPath = UrlUtil::getUrl();
         foreach(self::$arrNeedAuth as $authPath){
+                                                    // url을 가져와서 권한 경로와 일치하지 않을경우 user/login 페이지로 이동 
             if(!isset($_SESSION[_STR_LOGIN_ID]) && strpos($urlPath, $authPath)===0){
                 header(_BASE_REDIRECT."/user/login");
                 exit;

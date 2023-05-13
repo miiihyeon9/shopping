@@ -1,11 +1,13 @@
 <?php
 
 namespace application\model;
-use PDO;
-use Exception;
+use PDO;        // PDO클래스 사용
+use Exception;  // Exception 클래스 사용
+
+
 class Model{
     protected $conn;
-
+    // 데이터베이스 연결 
     public function __construct(){
         $dns ="mysql:host="._DB_HOST.";dbname="._DB_NAME.";charset="._DB_CHARSET;
         $option = [

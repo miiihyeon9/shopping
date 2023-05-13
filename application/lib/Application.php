@@ -10,10 +10,15 @@ class Application {
     // 생성자
     public function __construct(){
         $arrPath = UrlUtil::getUrlArrPath();   // 접속 url을 배열로 획득
+
+        // $arrPath가 비어있다면 User, 아니면 $arrPath[0]을 가져와서 앞 글자를 대문자로 변환
         $identityName = empty($arrPath[0]) ? "User" : ucfirst($arrPath[0]) ;
+
+        // $arrPath[1]가 비어있다면 login / 아니면 $arrPath[1]   /하고 GET방식으로 정보를 가져오니까 get을 가져와서 앞글자는 대문자로, 뒤에는 소문자로 변환해줌
         $action = (empty($arrPath[1]) ? "login" : $arrPath[1])
         .ucfirst(strtolower($_SERVER["REQUEST_METHOD"])) ;//GET->get ->Get
         // 컨트롤러명 작성
+        // application/controller/파일명.php
         $controllerPath = _PATH_CONTROLLER.$identityName._BASE_FILENAME_CONTROLLER._EXTENSION_PHP;
         
         //해당 파일이 존재 여부 체크 => 없을 때 if문
@@ -25,7 +30,7 @@ class Application {
         // 해당 컨트롤러 생성
         $controllerName = UrlUtil::replaceSlashToBackslash(_PATH_CONTROLLER.$identityName._BASE_FILENAME_CONTROLLER);
 
-        
+        // 인스턴스화
         new $controllerName($identityName,$action);
         // var_dump($identityName,$action);        
         // exit();    
@@ -33,6 +38,3 @@ class Application {
 }
 
 // new application\lib\Application();
-
-
-?>

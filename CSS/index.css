@@ -23,6 +23,7 @@ body{
     cursor:pointer;
 }
 .shop_name {
+    
     font-size: 60px;
     font-weight: 900;
 }
@@ -67,6 +68,9 @@ body{
     /* text-decoration: none; */
 }
 
+.navListGroup{
+    display:flex;
+}
 
 .sideTitle{
     font-size: 1.1em;
@@ -83,22 +87,31 @@ body{
 }
 
 .searchBox{
-    width:20vw;
+    width:400px;
+    margin:0 auto;
 }
 
-.navList{
+/* .navList{
     padding-right : 10px;
+} */
+path{
+    width:30px;
+    height:30px;
 }
 
 
+h3{
+    text-align: center;
+    font-size:1.2em;
+    font-weight: 900;
+}
 
 .contentBox{
     display: grid;
     grid-template-columns: 200px auto;
     background-color: #F8F9FA;
     position: absolute;
-    top :60px;
-    
+    top :116px;    
 }
 
 .carouselImgBox{
@@ -120,3 +133,48 @@ body{
 .carouselImg{
     object-fit: contain;
 }
+
+
+/* .modalBox{
+    position:absolute;
+    margin:0 auto;
+    top:50%; 
+    bottom:50%;
+     top:50%;
+
+    right: 50%;
+    transform:translateY(50%);
+} */
+
+/* .modalWrapper {
+    position: fixed;
+  } */
+
+  /* .modalCenter {
+    margin: 0 auto;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  } */
+
+
+  .modalWrapper {
+    position: fixed;
+  }
+  
+  .modalCenter {
+    margin: 0 auto;
+    /* max-width: 80%; */
+    width: 600px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+
+  .modalHeaderGroup{
+    display: flex;
+  }
+
