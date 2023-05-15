@@ -25,7 +25,7 @@ class UserController extends Controller {
     public function logoutGet(){
         session_unset();    // 세션을 지워줌
         session_destroy();  // 브라우저와 서버의 연결을 끊는거 
-        return "login"._EXTENSION_PHP;
+        return "detail"._EXTENSION_PHP;
     }
 
 
@@ -57,14 +57,11 @@ class UserController extends Controller {
                 }else{
                     $this->model->tranRollback();
                 }; 
-                
                 // $this->model->conn->commit();
                 return "main"._EXTENSION_PHP;
             }
             // 아니면 성공하고 login.php로 이동 
-
             }
-
             // $arr_post = $_POST;
             // $result_cnt = registUser( $arr_post );
             // exit();
@@ -73,5 +70,14 @@ class UserController extends Controller {
         // return "regist"._EXTENSION_PHP;
     }
 
+
+    public function detailGet(){
+        return _BASE_REDIRECT."/shop/main";
+    }
+    
+//     public function userGet(){
+//         return "detail"._EXTENSION_PHP;
+//     }
+// }
 }
 ?>

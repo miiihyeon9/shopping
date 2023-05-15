@@ -46,13 +46,13 @@
                     <div class="navListGroup">
                         <!-- !My -->
                         <?php if(isset($_SESSION[_STR_LOGIN_ID])){?>
-                        <a href="user/detail" class="navLinkBtn">
+                        <a href="/user/logout" class="navLinkBtn">
                             <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="black" class="bi bi-person-fill navList" viewBox="0 0 16 16">
                                 <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3Zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"/>
                             </svg>
                         </a> 
                         <?php }else{ ?>
-                        <a href="user/login" class="navLinkBtn">
+                        <a href="/user/login "class="navLinkBtn">
                             <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="black" class="bi bi-person" viewBox="0 0 16 16">
                             <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6Zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0Zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4Zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10Z"/>
                             </svg>
@@ -119,23 +119,23 @@
                 <div class="carousel-inner ">
                     <div class="carousel-item active " data-bs-interval="3000">
                         <div class="carouselImgBox">
-                            <img src="../img/pic1.jpg" class="card-img-top carouselImg" alt="...">
-                            <img src="../img/pic2.jpg" class="card-img-top carouselImg" alt="...">  
-                            <img src="../img/pic3.jpg" class="card-img-top carouselImg" alt="...">
+                            <img src="/application/view/img/pic1.jpg" class="card-img-top carouselImg" alt="...">
+                            <img src="/application/view/img/pic2.jpg" class="card-img-top carouselImg" alt="...">  
+                            <img src="/application/view/img/pic3.jpg" class="card-img-top carouselImg" alt="...">
                         </div>
                     </div>
                     <div class="carousel-item carouselSize" data-bs-interval="3000">
                         <div class="carouselImgBox">
-                            <img src="../img/pic1.jpg" class="card-img-top carouselImg" alt="...">
-                            <img src="../img/고라파덕.jpg" class="card-img-top carouselImg" alt="...">  
-                            <img src="../img/pic3.jpg" class="card-img-top carouselImg" alt="...">
+                            <img src="/application/view/img/pic1.jpg" class="card-img-top carouselImg" alt="...">
+                            <img src="/application/view/img/고라파덕.jpg" class="card-img-top carouselImg" alt="...">  
+                            <img src="/application/view/img/pic3.jpg" class="card-img-top carouselImg" alt="...">
                         </div>          
                     </div>
                     <div class="carousel-item" data-bs-interval="3000">
                         <div class="carouselImgBox">
-                            <img src="../img/pic1.jpg" class="card-img-top carouselImg" alt="...">
-                            <img src="../img/pic2.jpg" class="card-img-top carouselImg" alt="...">  
-                            <img src="../img/고라파덕.jpg" class="card-img-top carouselImg" alt="...">
+                            <img src="/application/view/img/pic1.jpg" class="card-img-top carouselImg" alt="...">
+                            <img src="/application/view/img/pic2.jpg" class="card-img-top carouselImg" alt="...">  
+                            <img src="/application/view/img/고라파덕.jpg" class="card-img-top carouselImg" alt="...">
                         </div>        
                     </div>
                 </div>
@@ -159,7 +159,7 @@
                 <div class="row row-xxl-4">
                     <div class="col d-flex justify-content-center cardItems" >
                         <div class="card" style="width: 18rem;">
-                            <a href=""><img src="../img/고라파덕.jpg" class="card-img-top" alt="..."></a>
+                            <a href=""><img src="/application/view/img/고라파덕.jpg" class="card-img-top" alt="..."></a>
                             <div class="card-body">
                                 <h5 class="card-title">고라파덕</h5>
                                 <p class="card-text">파덕?</p>
@@ -169,7 +169,7 @@
 
                     <div class="col d-flex justify-content-center cardItems">
                         <div class="card" style="width: 18rem;">
-                            <a href=""><img src="../img/고라파덕.jpg" class="card-img-top" alt="..."></a>
+                            <a href=""><img src="/application/view/img/고라파덕.jpg" class="card-img-top" alt="..."></a>
                                 <div class="card-body">
                                     <h5 class="card-title">고라파덕</h5>
                                     <p class="card-text">파아덕?</p>
@@ -179,7 +179,7 @@
                 
                     <div class="col d-flex justify-content-center cardItems">
                         <div class="card" style="width: 18rem;">
-                            <a href=""><img src="../img/고라파덕.jpg" class="card-img-top" alt="..."></a>
+                            <a href=""><img src="/application/view/img/고라파덕.jpg" class="card-img-top" alt="..."></a>
                             <div class="card-body">
                                 <h5 class="card-title">고라파덕</h5>
                                 <p class="card-text">파덕파아덕?</p>
@@ -189,7 +189,7 @@
 
                     <div class="col d-flex justify-content-center cardItems">
                         <div class="card" style="width: 18rem;">
-                            <a href=""><img src="../img/고라파덕.jpg" class="card-img-top" alt="..."></a>
+                            <a href=""><img src="/application/view/img/고라파덕.jpg" class="card-img-top" alt="..."></a>
                             <div class="card-body">
                                 <h5 class="card-title">고라파덕</h5>
                                 <p class="card-text">파덕파덕~</p>
@@ -199,7 +199,7 @@
                     
                     <div class="col d-flex justify-content-center cardItems">
                         <div class="card" style="width: 18rem;">
-                            <a href=""><img src="../img/고라파덕.jpg" class="card-img-top" alt="..."></a>
+                            <a href=""><img src="/application/view/img/고라파덕.jpg" class="card-img-top" alt="..."></a>
                             <div class="card-body">
                                 <h5 class="card-title">고라파덕</h5>
                                 <p class="card-text">파더어억!!!</p>
@@ -209,7 +209,7 @@
                     </div>
                     <div class="col d-flex justify-content-center cardItems">
                         <div class="card" style="width: 18rem;">
-                            <a href=""><a href=""><img src="../img/고라파덕.jpg" class="card-img-top" alt="..."></a></a>
+                            <a href=""><a href=""><img src="/application/view/img/고라파덕.jpg" class="card-img-top" alt="..."></a></a>
                             <div class="card-body">
                                 <h5 class="card-title">고라파덕</h5>
                                 <p class="card-text">파더어억!!!</p>
@@ -218,7 +218,7 @@
                     </div>
                     <div class="col d-flex justify-content-center cardItems">
                         <div class="card" style="width: 18rem;">
-                            <a href=""><a href=""><img src="../img/고라파덕.jpg" class="card-img-top" alt="..."></a></a>
+                            <a href=""><a href=""><img src="/application/view/img/고라파덕.jpg" class="card-img-top" alt="..."></a></a>
                             <div class="card-body">
                                 <h5 class="card-title">고라파덕</h5>
                                 <p class="card-text">파더어억!!!</p>
@@ -227,7 +227,7 @@
                     </div>
                     <div class="col d-flex justify-content-center cardItems">
                         <div class="card" style="width: 18rem;">
-                            <a href=""><a href=""><img src="../img/고라파덕.jpg" class="card-img-top" alt="..."></a></a>
+                            <a href=""><a href=""><img src="/application/view/img/고라파덕.jpg" class="card-img-top" alt="..."></a></a>
                             <div class="card-body">
                                 <h5 class="card-title">고라파덕</h5>
                                 <p class="card-text">파더어억!!!</p>

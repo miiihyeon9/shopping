@@ -40,7 +40,7 @@ class UserModel extends Model{
         try{
             $stmt = $this->conn->prepare($sql);
             $stmt->execute($prepare);
-            $result = $stmt->rowCount();
+            $result = $stmt->rowCount();        // transaction 실행 됨 그래서 밑에서 transaction을 실행할 때 에러가 뜨는거임 
         }catch(Exception $e){
             echo "UserModel->takeUserInfo Error".$e->getMessage();
             exit();
