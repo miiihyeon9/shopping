@@ -9,7 +9,6 @@
 <body>
     성공했슴다
     <button id="logout" onclick="redirectLogout()">Logout</button>
-
     <script>
         function redirectLogout(){
             location.href="/user/logout";

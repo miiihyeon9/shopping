@@ -3,9 +3,9 @@ namespace application\controller;
 
 
 
-class ProductController extends Controller {
-    public function listGet(){
-        return "list"._EXTENSION_PHP;
+class ShopController extends Controller {
+    public function mainGet(){
+        return "main"._EXTENSION_PHP;
     }
 
     // public function loginPost(){
@@ -18,14 +18,3 @@ class ProductController extends Controller {
 
 
 ?>
-
-
-
-
-
-
-
-
-
-
-

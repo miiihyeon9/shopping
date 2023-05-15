@@ -5,7 +5,7 @@ define("_ROOT",$_SERVER["DOCUMENT_ROOT"]);
 define("_DB_HOST","localhost");
 define("_DB_USER","root");
 // 비밀번호 블랭크해서 깃
-define("_DB_PASSWORD","0809");
+define("_DB_PASSWORD","root506");
 define("_DB_NAME","shopping");
 define("_DB_CHARSET","utf8mb4");
 
