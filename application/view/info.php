@@ -7,8 +7,7 @@
     <title>Document</title>
 </head>
 <body>
-    <?php //require_once("application/view/header.php"); 
-        ?>
+    <?php require_once("application/view/header.php"); ?>
     <form action="">
         <label for="user_id">ID</label>
         <input type="text" id="user_id" value="<?php echo $this->result[0]["user_id"] ?>" readonly>

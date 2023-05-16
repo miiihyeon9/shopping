@@ -10,12 +10,7 @@
     <link rel="stylesheet" href="/application/view/css/index.css">
 </head>
 <body>
-  <header>
-            <!-- 로고 -->
-            <div class="loginLogo">
-              <a href="/shop/main"><img src="https://see.fontimg.com/api/renderfont4/W9lv/eyJyIjoiZnMiLCJoIjo2NSwidyI6MTAwMCwiZnMiOjY1LCJmZ2MiOiIjMDAwMDAwIiwiYmdjIjoiI0ZGRkZGRiIsInQiOjF9/U0hPUA/quartzo-bold.png"  ></a>
-            </div>
-    </header>
+  <?php require_once("application/view/header.php"); ?>
     
     <div class="login-page">
       <div class="loginForm">
