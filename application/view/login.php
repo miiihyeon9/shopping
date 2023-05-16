@@ -21,12 +21,15 @@
       <div class="loginForm">
           <h3 style="color : red;"><?php echo isset($this->errMsg) ? $this->errMsg : "" ?></h3>
         <form action="/user/login" method="post" class="login-form">
-            <input type="text" name="id" id="id" placeholder="ID">
-            <input type="password" name="pw" id="pw" placeholder="PASSWORD">
+            <input type="text" name="user_id" id="user_id" placeholder="ID">
+            <input type="password" name="user_pw" id="user_pw" placeholder="PASSWORD">
             <button type="submit" class="btn btn-secondary">Login</button>
           </form>
           <form action="/user/regist" method="get">
           <p class="message">Not registered? <button type="submit" class="btn btn-secondary">Create an account</button></p>
+          </form>
+          <form action="/user/findPassword" method="get">
+          <button type="submit" class="btn btn-secondary">Find Password</button>
           </form>
       </div>
     </div>

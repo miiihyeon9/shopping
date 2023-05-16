@@ -58,7 +58,7 @@ class Controller{
     protected function addDynamicProperty($key,$val){
         //$this->key는 해당 객체에 있는 프로퍼티를
         // $this->$key 는 지금 객체의 에러메세지를 
-        $this->$key = $val; //!이때 생성되는 객체의 타입은 함수 앞에 쓴 것과 타입이 똑같은건지 (public, protected, private)
+        $this->$key = $val; 
     }
 
     // 유저 권한 체크 메소드

@@ -7,12 +7,12 @@
     <title>Document</title>
 </head>
 <body>
-    성공했슴다
+    
+</body>
+</html>성공했슴다
     <button id="logout" onclick="redirectLogout()">Logout</button>
     <script>
         function redirectLogout(){
             location.href="/user/logout";
         }
     </script>
-</body>
-</html>
