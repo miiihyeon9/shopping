@@ -10,27 +10,36 @@
     <link rel="stylesheet" href="/application/view/css/index.css">
 </head>
 <body>
+  <div class="wrap">
   <?php require_once("application/view/header.php"); ?>
-    
-    <div class="login-page">
-      <div class="loginForm">
-          <h3 style="color : red;"><?php echo isset($this->errMsg) ? $this->errMsg : "" ?></h3>
-        <form action="/user/login" method="post" class="login-form">
-            <input type="text" name="user_id" id="user_id" placeholder="ID">
-            <input type="password" name="user_pw" id="user_pw" placeholder="PASSWORD">
-            <button type="submit" class="btn btn-secondary">Login</button>
-          </form>
-          <form action="/user/regist" method="get">
-          <p class="message">Not registered? <button type="submit" class="btn btn-secondary">Create an account</button></p>
-          </form>
-          <form action="/user/findPassword" method="get">
-          <button type="submit" class="btn btn-secondary">Find Password</button>
-          </form>
+	
+
+      <div class="center ">
+        <div class="loginPage">
+            <div class="loginFormBox">
+              <h3 style="color : red;"><?php echo isset($this->errMsg) ? $this->errMsg : "" ?></h3>
+              <form action="/user/login" method="post" class="loginForm">
+                <input type="text" name="user_id" id="user_id" placeholder="ID" class="loginPad">
+                <input type="password" name="user_pw" id="user_pw" placeholder="PASSWORD" class="loginPad" >
+                <button type="submit" class="btn btn-secondary btnHeight">Login</button>
+              </form>
+              <form action="/user/regist" method="get" class="createId">
+                  <p class="registerText">Not registered? </p>
+                  <button type="submit" class="btn btn-secondary btnHeight">Create an account</button>
+              </form>
+              <!-- <form action="/user/findPassword" method="get" class="createId">
+                <p class="registerText">Not registered? </p>
+                <button type="submit" class="btn btn-secondary btnHeight">Find Password</button>
+              </form> -->
+            </div>
+          </div>
       </div>
+      
+      
     </div>
-      <!-- <script src="../Javascript/login.js"></script> -->
-      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" ></script>
-      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
-  
+      <?php require_once("application/view/footer.php") ?>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" ></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+    <script src="/application/view/JavaScript/index.js"></script>
 </body>
 </html>

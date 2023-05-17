@@ -12,7 +12,7 @@
 <body>
     <?php require_once("application/view/header.php"); ?>
     <div class="center">
-    <h2>My Info</h2>
+    <h2>DELETE</h2>
         <div class="loginForm modiForm loginFormBox modiFormBox">
             <label for="user_id" class="btnMargin registerText">ID</label>
             <input type="text" id="user_id" class="registPad btnMargin" name="user_id" value="<?php echo isset($this->result[0]["user_id"]) ? $this->result[0]["user_id"] : $_POST["user_id"] ?>" readonly>
@@ -26,17 +26,16 @@
             <!-- <form action="/user/logout" method="get">
             <button id="logout">Logout</button>
             </form> -->
-            <form action="/user/modify" method="get" class="modiBtn">
-                <button id="logout" class="btn btn-secondary registPad btnMargin btnWidth">수정하기</button>
-            </form>
-            <form action="/user/delete" method="get" class="modiBtn">
-                <button id="logout" class="btn btn-secondary registPad btnMargin btnWidth">탈퇴하기</button>
+            <div class="delText">삭제를 누르면 복구가 불가능 합니다. 삭제 하시겠습니까?</div>
+            <form action="/user/delete" method="post" class="modiBtn">
+                <input type="hidden" name="user_id" value="<?php echo isset($this->result[0]["user_id"]) ? $this->result[0]["user_id"] : $_POST["user_id"] ?>">
+                <button id="logout" class="btn btn-secondary registPad btnMargin btnWidth delBtn">탈퇴하기</button>
             </form>
         </div>
     </div>
         <?php require_once("application/view/footer.php") ?>
-    <script src="/application/view/JavaScript/index.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" ></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" ></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+        <script src="/application/view/JavaScript/index.js"></script>
 </body>
 </html>

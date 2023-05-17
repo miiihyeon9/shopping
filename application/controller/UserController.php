@@ -13,7 +13,7 @@ class UserController extends Controller {
         $this->model->closeConn();
 
         if(count($result) === 0){
-            $errMsg = "입력하신 회원정보가 없습니다.";
+            $errMsg = "아이디 또는 비밀번호가 틀렸습니다.";
             $this->addDynamicProperty("errMsg",$errMsg);
             return "login"._EXTENSION_PHP;
             // 다이나믹 프로퍼티 
@@ -43,26 +43,26 @@ class UserController extends Controller {
         if( $http_method === "POST" ){
             $arrPost = $_POST;
             $arrCheckError =[];
-            // 유효성 검사
+            // !유효성 검사
             // 글자수 체크 
             if(mb_strlen($arrPost["user_id"]) === 0 || mb_strlen($arrPost["user_id"]) > 12){
                 $arrCheckError["user_id"] = "ID는 12글자 이하로 입력해 주세요.";
             }
-            // !ID 영문 숫자 체크(해보3)
-
-            // if(preg_match('[a-zA-Z0-9]',$arrPost["user_id"]) === 0){
-            //     $arrCheckError["user_id"] = "영문과 숫자로 입력해 주세요.";
-            // }
+            // ID 영문 숫자 체크(해보3)
+            $pattern = "/[^a-zA-Z0-9]/";
+            if(preg_match($pattern,$arrPost["user_id"]) !== 0){
+                $arrCheckError["user_id"] = "영문과 숫자로 입력해 주세요.";
+            }
 
 
             // 패스워드 수 체크 
             if(mb_strlen($arrPost["user_pw"]) < 8 || mb_strlen($arrPost["user_pw"]) > 20 ){
                 $arrCheckError["user_pw"] = "PW는 8~20글자로 입력해 주세요.";
             }
-            // !패스워드 영문 숫자, 특수문자 체크 
-            // if(preg_match('[a-zA-Z0-9*\/+?{}.]',$arrPost["pw"]) === 0){
-            //     $arrCheckError["pw"] = "영문,숫자, 특수문자(*,\,/,+,?,{,},.)로 입력해 주세요.";
-            // }
+            // 패스워드 영문 숫자, 특수문자 체크 
+            if(preg_match('[^a-zA-Z0-9~!@#$]',$arrPost["user_pw"]) !== 0){
+                $arrCheckError["user_pw"] = "영문,숫자, 특수문자(~,!,@,#,$)만 입력해 주세요.";
+            }
 
             // 비밀번호 확인 체크 
             if($arrPost["user_pw"] !== $arrPost["pwCheck"]){
@@ -72,12 +72,12 @@ class UserController extends Controller {
             if(mb_strlen($arrPost["user_name"]) === 0 || mb_strlen($arrPost["user_name"])>30){
                 $arrCheckError["user_name"] ="이름은 30글자 이하로 입력해 주세요.";
             }
+
             // 유효성 체크 에러일 경우
             if(!empty($arrCheckError)){
                 $this->addDynamicProperty('arrError',$arrCheckError);
                 return "regist"._EXTENSION_PHP;
             }
-
             $result = $this->model->getUser($arrPost,false);
             // 유저 유무 체크 
             if(count($result) !== 0){
@@ -86,6 +86,12 @@ class UserController extends Controller {
                 return "regist"._EXTENSION_PHP;
                 // 다이나믹 프로퍼티 
             }
+            //! 전화번호 유효성 검사 
+            // $number_pattern = "/[^01[0-1]-{1}[0-9]{3,4}[0-9]{4}]/";
+
+
+
+            //! *****************************************/
             // transaction start 
             $this->model->tranBegin();
 
@@ -101,7 +107,7 @@ class UserController extends Controller {
             //  transaction End********************************************************************
 
 
-            return _BASE_REDIRECT."/user/login";
+            return "login"._EXTENSION_PHP;
         }
 
 
@@ -145,36 +151,98 @@ class UserController extends Controller {
         return _BASE_REDIRECT."/shop/main";
     }
     
-//     public function userGet(){
-//         return "detail"._EXTENSION_PHP;
-//     }
-// }
     public function infoGet(){
-        $http_method = $_SERVER["REQUEST_METHOD"];
-        $arrGet = $_GET;
+
         $result = $this->model->getUser($_SESSION,false);
         $this->addDynamicProperty("result",$result);
-        // var_dump($result);
+
         return "info"._EXTENSION_PHP;
     }
-    public function infoPost(){
-        // $http_method = $_SERVER["REQUEST_METHOD"];
-        // $arrGet = $_GET;
-        // $arrPost = $_POST;
-        // var_dump($arrGet);
-        // var_dump($arrPost);
-    }
-
-
     public function modifyGet(){
+        $result = $this->model->getUser($_SESSION,false);
+        // $result = $this->model->getUser($arrGet,false);
+        $this->addDynamicProperty("result",$result);
+        // var_dump($result);
         return "modify"._EXTENSION_PHP;
     }
 
-    public function modifyPost(){
+    public function modifyPost(){        
         // 해당하는 유저의 정보를 다 가져와서 
-        $http_method = $_SERVER["REQUEST_METHOD"];
-        $arrGet = $_GET;
+        // POST했을 때 유저의 비밀번호와 비밀번호 확인이 일치하면 
+        // UPDATE
+
+
+        // update
+        // $result_cnt = update_board_info_no( $arr_info );
+        // $result = $this->model->getUser($_SESSION,false);
+        // $this->addDynamicProperty("result",$result);
+        // var_dump($result);
         $arrPost = $_POST;
+        // var_dump($arrPost);
+        if(mb_strlen($arrPost["user_pw"]) < 8 || mb_strlen($arrPost["user_pw"]) > 20 ){
+            $arrCheckError["user_pw"] = "PW는 8~20글자로 입력해 주세요.";
+        }
+        // !패스워드 영문 숫자, 특수문자 체크 
+        if(preg_match('[^a-zA-Z0-9~!@#$]',$arrPost["user_pw"]) === 0){
+            $arrCheckError["user_pw"] = "영문,숫자, 특수문자(~,!,@,#,$)만 입력해 주세요.";
+        }
+
+        // 비밀번호 확인 체크 
+        if($arrPost["user_pw"] !== $arrPost["pwCheck"]){
+            $arrCheckError["pwCheck"] = "비밀번호와 비밀번호 확인이 일치하지 않습니다. ";
+        }
+        // 이름 
+        if(mb_strlen($arrPost["user_name"]) === 0 || mb_strlen($arrPost["user_name"])>30){
+            $arrCheckError["user_name"] ="이름은 30글자 이하로 입력해 주세요.";
+        }
+        // 유효성 체크 에러일 경우
+        if(!empty($arrCheckError)){
+            $this->addDynamicProperty('arrError',$arrCheckError);
+            // var_dump($arrCheckError);
+            return "modify"._EXTENSION_PHP;
+        }
+
+        $this->model->tranBegin();
+            // user insert
+            if(!$this->model->updateUser($arrPost)){
+                // 예외 처리 롤백
+                $this->model->tranRollback();
+                echo "User Modify Error";
+                exit();
+            }
+            // 정상처리 커밋 
+            $this->model->tranCommit();
+            //  transaction End*****************************
+            session_unset();    // 세션을 지워줌
+            session_destroy(); 
+            return "login"._EXTENSION_PHP;
+    }
+
+    public function deleteGet(){
+        $result = $this->model->getUser($_SESSION,false);
+        // $result = $this->model->getUser($arrGet,false);
+        $this->addDynamicProperty("result",$result);
+        // var_dump($result);
+        return "delete"._EXTENSION_PHP;
+    }
+    
+    public function deletePost(){
+        $arrPost = $_POST;
+        // var_dump($arrPost);
+        $this->model->tranBegin();
+            // user insert
+            if(!$this->model->updateUser($arrPost,false)){
+                // 예외 처리 롤백
+                $this->model->tranRollback();
+                echo "User Delete Error";
+                exit();
+            }
+            // 정상처리 커밋 
+            $this->model->tranCommit();
+        session_unset();    // 세션을 지워줌
+        session_destroy(); 
+        return _BASE_REDIRECT."/shop/main";
+        // return "delete"._EXTENSION_PHP;
     }
 }
 ?>

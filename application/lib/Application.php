@@ -7,7 +7,6 @@ use application\util\UrlUtil;
 
 
 class Application {
-
     // 생성자
     public function __construct(){
 
