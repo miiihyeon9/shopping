@@ -1,6 +1,6 @@
 <?php
 namespace application\util;
-
+// util 폴더는 보통 어느 파일에서든 사용이 가능한 파일들 저장
 class UrlUtil {
 
     // $_GET["url"]을 분석해서 리턴
@@ -17,7 +17,7 @@ class UrlUtil {
     public static function getUrlArrPath(){
     // UrlUtil클래스의 getUrl();을 가져와서
         $url = UrlUtil::getUrl();
-    // 빈문자가 아니라면 $url을 /기준으로 나누어주고 빈 문자면 ""
+    // 빈문자가 아니라면 $url을 /기준으로 나누어주어서 배열로 나타내고  빈 문자면 ""
         return $url !== "" ? explode("/",$url) : "" ;
     }
 

@@ -1,14 +1,12 @@
-
-<footer>
-    <h4>SHOPPING</h4>
-    <ul>
-        <p class="copyright">@copyright 2023 Mihyeon Kim</p>
+<div class="container">
+  <footer class="py-3 my-4">
+    <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+      <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Home</a></li>
+      <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Features</a></li>
+      <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Pricing</a></li>
+      <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">FAQs</a></li>
+      <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">About</a></li>
     </ul>
-    <ul class="contact">
-        <li>CONTACT US</li>
-        <br>
-        <li>GREEN ART COMPUTER 506</li>
-        <li>010-0000-0000</li>
-        <li>miiihyeon98@gmail.com</li>
-    </ul>
-</footer>
+    <p class="text-center text-muted">© 2023 Company Mihyeon Kim</p>
+  </footer>
+</div>

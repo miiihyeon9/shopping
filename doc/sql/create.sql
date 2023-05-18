@@ -1,0 +1,5 @@
+CREATE TABLE user_info(
+user_no INT PRIMARY KEY AUTO_INCREMENT 
+, user_id VARCHAR(12) NOT NULL
+, user_pw VARCHAR(512) NOT NULL
+);

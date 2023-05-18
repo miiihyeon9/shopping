@@ -6,7 +6,7 @@
                 <ul class="nav nav-pills" id="nav_log">
                     <?php if( isset($_SESSION[_STR_LOGIN_ID] )){ ?>
                         <li class="nav-item">
-                            <a href="/user/logout" class="nav-link navColor" >로그아웃</a>
+                            <a href="/user/logout" class="nav-link navColor logoutBtn">로그아웃</a>
                         </li>
                         <li class="nav-item">
                             <a href="/user/info" class="nav-link navColor" >내정보</a>

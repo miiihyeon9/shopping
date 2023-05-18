@@ -4,22 +4,24 @@ namespace application\model;
 
 class UserModel extends Model{
     // 로그인할 때 필요한 유저의 정보 가져옴
-                                        // $pwFlg = true  => 두번째 파라미터가 있으면 true 없으면 false 
+                                        // $pwFlg = true  => 두번째 파라미터가 있으면 true 없으면 false
     public function getUser($arrUserInfo, $pwFlg = true){
-        $sql = "SELECT * FROM user_info WHERE del_flg = '0' AND user_id=:user_id ";
-
+        $sql = "SELECT * FROM user_info WHERE  user_id=:user_id ";
+        // 비밀번호 확인 flg
         if($pwFlg){
-            $sql .=" and user_pw =:user_pw ";
-        }        
+            $sql .=" AND user_pw = BINARY :user_pw ";
+        }
+        //  삭제 플래그 
+
         $prepare = [
             ":user_id" =>$arrUserInfo["user_id"]
-
         ];
-
+        
+        // 비밀번호 확인 flg
         if($pwFlg){
             $prepare[":user_pw"]  = $arrUserInfo["user_pw"];
         }
-        
+
         try{
             $stmt = $this->conn->prepare($sql);
             $stmt->execute($prepare);
@@ -31,31 +33,6 @@ class UserModel extends Model{
         return $result;
     }
 
-// 유저 아이디 가져오기 
-    // public function takeUserInfo($userId){
-    //     $sql = "SELECT "
-    //             ." user_id "
-    //             ." FROM "
-    //             ." user_info "
-    //             ." WHERE "
-    //             ." user_id = :user_id ";
-
-    //     $prepare = [
-    //         ":user_id" =>$userId
-    //     ];
-
-    //     try{
-    //         $stmt = $this->conn->prepare($sql);
-    //         $stmt->execute($prepare);
-    //         $result = $stmt->rowCount();        // transaction 실행 됨 그래서 밑에서 transaction을 실행할 때 에러가 뜨는거임 
-    //     }catch(Exception $e){
-    //         echo "UserModel->takeUserInfo Error".$e->getMessage();
-    //         exit();
-    //     }
-
-    //     return $result;
-    // }
-    
     public function registUser($arrSignUpUser){
         $sql = "INSERT INTO"
                 ." user_info"
@@ -72,31 +49,23 @@ class UserModel extends Model{
                 ." ) ";
 
         $prepare = [ ":user_id" => $arrSignUpUser["user_id"]
-        //  base64_encode(제일 간단한 암호화)
+                    //  base64_encode(제일 간단한 암호화 -> 쉽게 뚫려서 잘 사용하지 않음 )
                     ,":user_pw"  => $arrSignUpUser["user_pw"]
                     ,":user_name"  => $arrSignUpUser["user_name"]
         ];
 
+        // try catch
         try 
         {
-            // $this->conn->beginTransaction(); // Transaction시작  commit이나 rollback만나면 종료
             $stmt = $this->conn->prepare( $sql );
             $result = $stmt->execute( $prepare );
             return $result;
-            // $result_cnt = $stmt->rowCount();
-            // // $this->conn->commit();
-            // if($result_cnt===1){
-            //     return true;
-            // }  //행의 개수 리턴 
         }
         catch (Exception $e) 
         {
-            // $this->conn->rollback();
-            // echo "UserModel->registUser Error".$e->getMessage();
-            // exit();
             return false;
         }
-        // return false;
+
     }
 
     
@@ -104,7 +73,7 @@ class UserModel extends Model{
         $sql = " UPDATE "
         ." user_info "
         ." SET ";
-        // 수정할 때 필요한 거
+
         // 업데이트 할 때
         if($updateFlg){
             $sql .= " user_pw = :user_pw, user_name = :user_name  WHERE user_id = :user_id ";
@@ -122,26 +91,15 @@ class UserModel extends Model{
             $prepare[":user_pw"] = $arrModify["user_pw"];
             $prepare[":user_name"] = $arrModify["user_name"];
         }
-        // 삭제할 때 
-
-
+        // try catch
         try 
         {
-            // $this->conn->beginTransaction(); // Transaction시작  commit이나 rollback만나면 종료
             $stmt = $this->conn->prepare( $sql );
             $result = $stmt->execute( $prepare );
             return $result;
-            // $result_cnt = $stmt->rowCount();
-            // // $this->conn->commit();
-            // if($result_cnt===1){
-            //     return true;
-            // }  //행의 개수 리턴 
         }
         catch (Exception $e) 
         {
-            // $this->conn->rollback();
-            // echo "UserModel->registUser Error".$e->getMessage();
-            // exit();
             return false;
         }
     }

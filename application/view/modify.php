@@ -18,25 +18,24 @@
         <div class="loginPage">
             <div class="loginFormBox modiFormBox">
                 <form action="/user/modify" method="post" class="modiForm  loginForm gap-3">
-            <label for="user_id">ID</label>
-                    <input type="text" id="user_id" class="registPad" name="user_id" value="<?php echo isset($this->result[0]["user_id"]) ? $this->result[0]["user_id"] : $_POST["user_id"] ?>" placeholder="ID" readonly>
+                    <label for="user_id">ID</label>
+                    <input type="text" id="user_id" class="registPad" name="user_id" value="<?php echo $this->result[0]["user_id"] ?>" placeholder="ID" readonly>
+                    <label for="user_name">NAME</label>                                                       
+                    <input type="text" id="user_name" class="registPad" name="user_name" placeholder="NAME" value="<?php echo isset($this->arrError["user_name"]) ? $_POST["user_name"] : $this->result[0]["user_name"]  ?>" >
         
-        <label for="user_name">NAME</label>
-                    <input type="text" id="user_name" class="registPad" name="user_name" placeholder="NAME" value="<?php echo isset($this->result[0]["user_name"]) ? $this->result[0]["user_name"] : $_POST["user_name"] ?>" >
-        
-        <label for="user_nowpw">현재 비밀번호</label>
-                    <input type="text" id="user_nowpw" class="registPad" name="user_nowpw" value="<?php echo isset($this->result[0]["user_pw"]) ? $this->result[0]["user_pw"] : $_POST["user_nowpw"] ?>" readonly>
+                    <label for="user_nowpw">현재 비밀번호</label>
+                    <input type="text" id="user_nowpw" class="registPad" name="user_nowpw"  placeholder="NOW PASSWORD" value="<?php echo $this->result[0]["user_pw"] ?>" readonly>
 
-        <label for="user_pw">새 비밀번호</label>
-                    <input type="password" id="user_pw" class="registPad" name="user_pw" placeholder="NEW PASSWORD" value="<?php echo isset($this->arrError["user_pw"])|| !(isset($_POST["user_pw"])) ? "" : $_POST["user_pw"] ?>">
+                    <label for="user_pw">새 비밀번호</label>
+                    <input type="password" id="user_pw" class="registPad" name="user_pw" placeholder="NEW PASSWORD" value="<?php echo isset($this->arrError["user_pw"]) || !(isset($_POST["user_pw"])) ? "" : $_POST["user_pw"] ?>">
                     <span class="errM">
                         <?php 
                         if(isset($this->arrError["user_pw"])){ 
                             echo $this->arrError["user_pw"]; 
                         }?>
                     </span>
-        <label for="pwCheck">새 비밀번호 확인</label>
-                    <input type="password" id="pwCheck" name="pwCheck" class="registPad" placeholder="PASSWORD CHECK" value="<?php echo isset($this->arrError["pwCheck"])|| !(isset($_POST["pwCheck"])) ? "" : $_POST["pwCheck"] ?>">
+                    <label for="pwCheck">새 비밀번호 확인</label>
+                    <input type="password" id="pwCheck" name="pwCheck" class="registPad" placeholder="PASSWORD CHECK" value="<?php echo isset($this->arrError["pwCheck"]) || !(isset($_POST["pwCheck"])) ? "" : $_POST["pwCheck"] ?>">
                     <span class="errM">
                         <?php 
                         if(isset($this->arrError["pwCheck"])){ 

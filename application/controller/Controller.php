@@ -3,6 +3,7 @@ namespace application\controller;
 
 use application\util\UrlUtil;
 use \AllowDynamicProperties;
+
 #[AllowDynamicProperties]
 class Controller{
     protected $model;
@@ -22,13 +23,14 @@ class Controller{
         $this->model = $this->getModel($identityName);
         //controller 메소드 호출
         $view = $this->$action();   // loginGet
-        $this->model->closeConn();
+        // $this->model->closeConn();
 
         if(empty($view)){
             echo "해당 Controller에 메소드가 없습니다.".$action;
             exit();
         }
         require_once $this->getView($view);
+        // location: => 해당하는 url로 리다이렉트 
     }
 
     protected function getModel($identityName){
@@ -38,6 +40,7 @@ class Controller{
         {
                                                           //application/model/UserModel
             $modelName = UrlUtil::replaceSlashToBackslash(_PATH_MODEL.$identityName._BASE_FILENAME_MODEL);
+
             self::$modelList[$identityName] = new $modelName(); // Model 호출
         }
         return self::$modelList[$identityName];
@@ -59,6 +62,7 @@ class Controller{
         //$this->key는 해당 객체에 있는 프로퍼티를
         // $this->$key 는 지금 객체의 에러메세지를 
         $this->$key = $val; 
+        // ex) $this->addDynamicProperty("result",$result); => $this->result에 해당하는 객체에 있는 $result의 값을 넣는다. 
     }
 
     // 유저 권한 체크 메소드

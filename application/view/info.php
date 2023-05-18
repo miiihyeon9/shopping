@@ -15,13 +15,13 @@
     <h2>My Info</h2>
         <div class="loginForm modiForm loginFormBox modiFormBox">
             <label for="user_id" class="btnMargin registerText">ID</label>
-            <input type="text" id="user_id" class="registPad btnMargin" name="user_id" value="<?php echo isset($this->result[0]["user_id"]) ? $this->result[0]["user_id"] : $_POST["user_id"] ?>" readonly>
-            
+            <input type="text" id="user_id" class="registPad btnMargin" name="user_id" value="<?php echo isset($this->result[0]["user_id"]) ? $this->result[0]["user_id"] : $_POST["user_id"] ?>" disabled>
+            <input type="hidden" name="user_id" value="<?php echo isset($this->result[0]["user_id"]) ? $this->result[0]["user_id"] : $_POST["user_id"] ?>" disabled>
             <label for="user_pw" class="btnMargin registerText">Password</label>
-            <input type="password" id="user_pw" class="registPad btnMargin" name="user_pw" value="<?php echo isset($this->result[0]["user_pw"]) ? $this->result[0]["user_pw"] : $_POST["user_pw"] ?>" readonly>
+            <input type="password" id="user_pw" class="registPad btnMargin" name="user_pw" value="<?php echo isset($this->result[0]["user_pw"]) ? $this->result[0]["user_pw"] : $_POST["user_pw"] ?>" disabled>
             
             <label for="user_name" class="btnMargin registerText">NAME</label>
-            <input type="text" id="user_name" class="registPad btnMargin" name="user_name" value="<?php echo isset($this->result[0]["user_name"]) ? $this->result[0]["user_name"] : $_POST["user_name"] ?>" readonly>
+            <input type="text" id="user_name" class="registPad btnMargin" name="user_name" value="<?php echo isset($this->result[0]["user_name"]) ? $this->result[0]["user_name"] : $_POST["user_name"] ?>" disabled>
 
             <!-- <form action="/user/logout" method="get">
             <button id="logout">Logout</button>

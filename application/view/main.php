@@ -30,7 +30,7 @@
                             <div class="carouselImgBox">
 
     
-                                <img src="/application/view/img/knit.jpg" class="card-img-top carouselImg" alt="...">
+                                <img src="/application/view/img/knitcarousel.jpg" class="card-img-top carouselImg" alt="...">
                             </div>          
                         </div>
                         <div class="carousel-item" data-bs-interval="3000">
@@ -59,7 +59,7 @@
                     <div class="row row-xxl-4 cardGroup">
                         <div class="col d-flex justify-content-center cardItems" >
                             <div class="card" style="width: 18rem;">
-                                <a href=""><img src="/application/view/img/고라파덕.jpg" class="card-img-top" alt="고라파덕"></a>
+                                <a href=""><img src="/application/view/img/pic2.jpg" class="card-img-top" alt="고라파덕"></a>
                                 <div class="card-body">
                                     <h5 class="card-title">고라파덕</h5>
                                     <p class="card-text">파덕?</p>
@@ -69,7 +69,7 @@
 
                         <div class="col d-flex justify-content-center cardItems">
                             <div class="card" style="width: 18rem;">
-                                <a href=""><img src="/application/view/img/고라파덕.jpg" class="card-img-top" alt="고라파덕"></a>
+                                <a href=""><img src="/application/view/img/greenTShirts.jpg" class="card-img-top" alt="고라파덕"></a>
                                     <div class="card-body">
                                         <h5 class="card-title">고라파덕</h5>
                                         <p class="card-text">파아덕?</p>
@@ -79,7 +79,7 @@
                     
                         <div class="col d-flex justify-content-center cardItems">
                             <div class="card" style="width: 18rem;">
-                                <a href=""><img src="/application/view/img/고라파덕.jpg" class="card-img-top" alt="고라파덕"></a>
+                                <a href=""><img src="/application/view/img/knit.jpg" class="card-img-top" alt="고라파덕"></a>
                                 <div class="card-body">
                                     <h5 class="card-title">고라파덕</h5>
                                     <p class="card-text">파덕파아덕?</p>
@@ -89,7 +89,7 @@
 
                         <div class="col d-flex justify-content-center cardItems">
                             <div class="card" style="width: 18rem;">
-                                <a href=""><img src="/application/view/img/고라파덕.jpg" class="card-img-top" alt="고라파덕"></a>
+                                <a href=""><img src="/application/view/img/pic3.jpg" class="card-img-top" alt="고라파덕"></a>
                                 <div class="card-body">
                                     <h5 class="card-title">고라파덕</h5>
                                     <p class="card-text">파덕파덕~</p>
@@ -99,7 +99,7 @@
                         
                         <div class="col d-flex justify-content-center cardItems">
                             <div class="card" style="width: 18rem;">
-                                <a href=""><img src="/application/view/img/고라파덕.jpg" class="card-img-top" alt="고라파덕"></a>
+                                <a href=""><img src="/application/view/img/pic2.jpg" class="card-img-top" alt="고라파덕"></a>
                                 <div class="card-body">
                                     <h5 class="card-title">고라파덕</h5>
                                     <p class="card-text">파더어억!!!</p>
@@ -109,7 +109,7 @@
                         </div>
                         <div class="col d-flex justify-content-center cardItems">
                             <div class="card" style="width: 18rem;">
-                                <a href=""><img src="/application/view/img/고라파덕.jpg" class="card-img-top" alt="고라파덕"></a>
+                                <a href=""><img src="/application/view/img/greenTShirts.jpg" class="card-img-top" alt="고라파덕"></a>
                                 <div class="card-body">
                                     <h5 class="card-title">고라파덕</h5>
                                     <p class="card-text">파더어억!!!</p>
