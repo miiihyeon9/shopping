@@ -96,7 +96,7 @@ h3{
 }
 
 .info{
-    z-index:999;
+    z-index:900;
 }
 
 /* !카드 */
@@ -198,4 +198,39 @@ h2{
     height:48px;
     margin-right:10px;
     margin-top:20px;
+}
+
+
+.positionRel{
+    position: relative;
+}
+
+.showPw{
+    background-image: url("/application/view/img/view.png");
+    border:none;
+    background-color: #fff;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position:absolute;
+    z-index:999;
+    width:30px;
+    height:30px;
+    top:138px;
+    right:10px;
+    cursor: pointer;
+}
+
+.showPw.active{
+    background-image: url("/application/view/img/hide.png");
+    border:none;
+    background-color: #fff;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position:absolute;
+    z-index:999;
+    width:30px;
+    height:30px;
+    top:138px;
+    right:10px;
+    cursor: pointer;
 }

@@ -27,10 +27,10 @@
             <button id="logout">Logout</button>
             </form> -->
             <form action="/user/modify" method="get" class="modiBtn">
-                <button id="logout" class="btn btn-secondary registPad btnMargin btnWidth">수정하기</button>
+                <button  class="btn btn-secondary registPad btnMargin btnWidth">수정하기</button>
             </form>
             <form action="/user/delete" method="get" class="modiBtn">
-                <button id="logout" class="btn btn-secondary registPad btnMargin btnWidth">탈퇴하기</button>
+                <button  class="btn btn-secondary registPad btnMargin btnWidth">탈퇴하기</button>
             </form>
         </div>
     </div>

@@ -21,6 +21,7 @@
             <form action="/user/login" method="post" class="loginForm">
               <input type="text" name="user_id" id="user_id" placeholder="ID" class="loginPad">
               <input type="password" name="user_pw" id="user_pw" placeholder="PASSWORD" class="loginPad" >
+              <span type="button" class="showPw"></span>
               <button type="submit" class="btn btn-secondary btnHeight">Login</button>
             </form>
             <form action="/user/regist" method="get" class="createId loginForm">

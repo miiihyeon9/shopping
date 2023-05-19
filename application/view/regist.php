@@ -27,7 +27,7 @@
                         </span>
                         <div class="checkBtnGrid">
                             <input type="text" placeholder="ID" name="user_id" id="user_id"  class="registPad inputHeight" value="<?php echo isset($this->arrError["user_id"]) ? $_POST["user_id"] : "" ?>" >
-                            <button type = "button" class="btn btn-secondary registPad btnMargin btnMarginBottom" onclick="checkDuplication()" >Check</button>
+                            <button type = "button" class="btn btn-secondary registPad btnMargin btnMarginBottom idCheckBtn" >Check</button>
                         </div>
                         <span><?php if(isset($this->errMsg)){ echo $this->errMsg; }?></span>
                         <input type="password" placeholder="PASSWORD" name="user_pw" id="user_pw" class="registPad" value="<?php echo isset($this->arrError["user_pw"]) ? $_POST["user_pw"] : "" ?>">
