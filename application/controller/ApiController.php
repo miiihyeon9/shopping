@@ -11,17 +11,18 @@ class ApiController extends Controller{
 
         $result = $this->model->getUser($arrGet,false);
         // 유저 유무 체크 
-
+        // !
+        if($arrGet["user_id"] ===""){
+            $arrData["flg"] = "0";
+            $arrData["msg"] = "아이디를 입력해 주세요.";
+        }
 
         if(count($result) !== 0){
             $arrData["flg"] = "1";
             $arrData["msg"] = "이미 사용중인 아이디 입니다.";
         }
-        else if($arrGet["user_id"] ===""){
-            $arrData["flg"] = "2";
-            $arrData["msg"] = "아이디를 입력해 주세요.";
-        }
         else{
+            $arrData["flg"] = "2";
             $arrData["msg"] = "사용 가능한 아이디 입니다.";
         }
 

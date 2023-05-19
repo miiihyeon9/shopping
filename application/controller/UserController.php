@@ -52,8 +52,8 @@ class UserController extends Controller {
             }
             
             // ID 영문 숫자 체크(해보3)
-            $id_pattern = "/^[a-zA-Z0-9]$/";
-            $pw_pattern = '/^[0-9a-zA-Z\!\@\#\$\%\^\&\*]{8,20}$/';
+            $id_pattern = "/^[a-zA-Z0-9]$/u";
+            $pw_pattern = '/^[0-9a-zA-Z\!\@\#\$\%\^\&\*]{8,20}$/u';
             if(preg_match($id_pattern,$arrPost["user_id"]) !== 0){
                 $arrCheckError["user_id"] = "영문과 숫자로 입력해 주세요.";
             }
@@ -184,7 +184,7 @@ class UserController extends Controller {
         // var_dump($result);
         $arrPost = $_POST;
 
-        $pw_pattern = '/^[0-9a-zA-Z\!\@\#\$\%\^\&\*]{8,20}$/';
+        $pw_pattern = '/^[0-9a-zA-Z\!\@\#\$\%\^\&\*]{8,20}$/u';
         // var_dump($arrPost);
         // !패스워드 영문 숫자, 특수문자 체크 
         if(preg_match($pw_pattern,$arrPost["user_pw"]) === 0){
@@ -258,7 +258,7 @@ class UserController extends Controller {
         session_unset();    // 세션을 지워줌
         session_destroy(); 
         return _BASE_REDIRECT."/shop/main";
-        // return "delete"._EXTENSION_PHP;
+
     }
 }
 ?>

@@ -41,8 +41,8 @@ const checkDuplication=() =>{
         }
     })
     .catch(error=>alert(error.message));
-
 }
+
 
 const throttle = () =>{
     let timer;

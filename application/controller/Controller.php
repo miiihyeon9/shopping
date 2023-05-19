@@ -9,6 +9,7 @@ class Controller{
     protected $model;
     private static $modelList=[];// 똑같은 모델이지만 각 메모리를 갖고 있기 때문에 호출할 때 메모리의 사용량을 줄이기 위해(서버부하를 줄이기 위해) static 사용
     private static $arrNeedAuth = ["product/list"];  // 접속권한 권한 필요 
+    private static $arrNeedlessAuth = ["user/login", "user/regist"];
     // 생성자
     public function __construct($identityName,$action){
         // session start 
@@ -76,7 +77,13 @@ class Controller{
                 exit;
             }
         }
+        foreach (self::$arrNeedlessAuth as $authPath) {
+            if (isset($_SESSION[_STR_LOGIN_ID]) && strpos($urlPath, $authPath) === 0) {
+                header(_BASE_REDIRECT."/shop/main");
+                exit;
+            }
     }
+}
 }
 
 
