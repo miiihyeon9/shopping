@@ -1,201 +1,231 @@
-*{
-    margin:0;
-    padding:0;
-    box-sizing: border-box;
-}
-*:focus {
-    outline: none;
-}
-.wrap{
-    width:1200px;
-    margin:0 auto;
-    text-align: center;
-    padding: 0;
-}
-/* !헤더 */
-.mainHeader{
-    background-color: black;
-    text-align: left;
-    padding : 15px 25px;
-}
 
+body {
+  margin: 0px;
+  width:100%;
+  box-sizing: border-box;
+}
 a{
-    color: black;
+  text-decoration: none;
+  color : #010101;
 }
-
-ul{
-    padding: 0;
-    margin : 0;
+/* ! Header */
+.mainHeader{
+  width:1200px;
+  margin:0 auto;
+  display:grid;
+  grid-template-columns: 3fr 7fr 3fr;
+  padding:  20px 30px;
 }
 .logoImg{
-    display:block;
-    margin:auto;
-    text-align: center;
+  width: 100px;
+  height: 100px;
+}
+.searchBox{
+  margin: 10px auto 0;
+  position:relative;
 }
 
-.navColor{
-    color:#000;
+.searchInput{
+  width:500px;
+  height:40px;
+  border: 1px solid #010101;
+  font-size:16px;
+  padding: 10px;
+  outline: none;
 }
-li a {
-    text-decoration: none;
-    color:#000;
+.searchButton{
+  position:absolute;
+  right:10px;
+  top:8px;
+  z-index: 999;
+  border:none;
+  background-color: #fff;
+  cursor:pointer;
 }
-li{
-    list-style: none;
-}
-/* !main center */
-.listGroup{
-    display : grid;
-    grid-template-columns: repeat(4,1fr);
-    border:2px solid #000;
-    border-top:0;
-    padding : 0;
-    text-align: center;
-    transform:translateY(-600px);
-    height:0;
-    opacity: 0;
-    transition: all 0.5s;
-}
-
-.listGroup.active{
-    display : grid;
-    grid-template-columns: repeat(4,1fr);
-    border:2px solid #000;
-    border-top:0;
-    padding : 0;
-    opacity: 1;
-    height:200px;
-    text-align: center;
-    transform:translateY(0);
-    transition: all 0.5s;
-}
-.list{
-    padding: 0;
-    width:100%;
-    height: 72px;
+.myInfo{
+  font-size: 20px;
+  position:relative;
+  /* text-align: center; */
 }
 
-.list.active{
-    padding: 0;
-    width:100%;
-    height: 264px;
+.infoList{
+  position:absolute;
+  bottom:0;
 }
-.title{
-    padding-top:10px ;
-    font-weight: 900;
+.login{
+  left : 70px;
 }
 
-.listCollection li{
-    padding-bottom:10px;
+.signUp{
+  left : 160px;
 }
-
-h3{
-    font-size: 1.1em;
-    font-weight: 900;
-    padding-top:10px;
+/* !NavBar */
+nav {
+  margin-top: 10px;
+  padding: 12px;
+  text-align: center;
+  font-family: Raleway;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
 }
-
-.info{
-    z-index:999;
-}
-
-/* !카드 */
-
-.cardList{
-    padding : 20px 0;
-}
-
-.cardItems{
-    padding: 10px;
+#nav-1 {
+  background: #fff;
 }
 
 
-li a {
-    color : #000;
+.link-1 {
+  transition: 0.3s ease;
+  background: #fff;
+  color: #010101;
+  font-size: 20px;
+  text-decoration: none;
+  border-top: 2px solid #fff;
+  border-bottom: 2px solid #fff;
+  padding: 10px 0;
+  margin: 0 20px;
+}
+.link-1:hover {
+
+  border-bottom: 2px solid #010101;
+  padding: 6px 0; 
 }
 
-/* !login */
+.menuList{
+  display:none;
+  opacity: 0;
+  left:50%;
+  transform: translateX(-50%);
+  /* background-color: #fff; */
+  border:2px solid #fff;
+  position:absolute;
+}
 
-
+.menuList.active{
+  display: grid;
+  width:1200px;
+  /* height:50px; */
+  opacity: 1;
+  border:1.5px solid #e2e2e2;
+  background-color: #fff;
+  position:absolute;
+  top:165px;
+  left:50%;
+  transform: translateX(-50%);
+  transition: all 1s;
+  z-index:999;
+}
+.menuList{
+  display:grid;
+  grid-template-columns: repeat(4,1fr);
+}
+.menuDetail{
+  text-align: center;
+  padding: 10px;
+}
+/* !   main center */
 .center{
-    
-    min-height:63vh;
+  width:1200px;
+  margin: 0 auto;
+}
+h3{
+  padding-top : 20px;
+  font-size: 1.3em;
+  text-align: center;
+}
+.carouselgrid{
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+
+}
+.carouselGroup{
+  text-align: center;
+}
+.caroImg{
+  width: 360px;
+  padding: 10px;
 }
 
+/* card */
+.card{
+  padding:30px 0;
+}
+.cardGroup{
+  gap:30px;
+}
+
+/* !form center */
+.formCenter{
+  width:500px;
+  margin:0 auto;
+}
+
+/* login */
+.grid{
+  display:grid;
+}
+label{
+  width:400px;
+  padding-left:40px;
+}
+.form{
+  border:1px solid #010101;
+  padding-bottom:50px;
+  position:relative;
+}
 .loginForm{
-    width: 400px;
-    display: grid;
-    grid-template-rows: repeat(auto,1fr);
+  grid-template-rows: 1fr auto 2fr;
 }
 
-.loginFormBox{
-    width:400px;
-    margin:30px auto;
-}
-.loginPad{
-    padding: 10px;
-    margin:15px 0;
-}
-.btnHeight{
-    height:5vh;
-    margin-top:0;
-}
-.createId{
-    display:grid;
-    grid-template-columns: repeat(auto,1fr);
-}
-.registerText{
-    padding: 10px 0;
-    padding-left: 20px;
-}
-.registPad{
-    padding: 10px;
+.inputTag,.btnGroup{
+  width:400px;
+  height:50px;
+  margin:20px auto;
 }
 
-.btnMargin{
-    margin-top:20px;
+.formText{
+  font-size:20px;
+  text-align: center;
+}
+.messageBox{
+  position:relative;
+}
+.errMessage{
+  font-size: 15px;
+  color:#ff000f;
+  height:25px;
+  text-align: center;
+  display: inline-block;
+  vertical-align: bottom;
+  position:absolute;
+  bottom:0;
+  left:50%;
+  transform: translateX(-50%);
 }
 
-.modiForm{
-    grid-template-columns: repeat(2,1fr);
-}
-.errM,.modiBtn{
-grid-column:1/3;
-}
-h2{
-    text-align: center;
-    padding-top:40px;
-    font-weight: 900;
-}
-.modiFormBox{
-    width:25vw;
+.registForm{
+  grid-template-rows: auto 1fr auto; 
+  padding: 20px;
 }
 
-.btnWidth{
-    width:100%;
-}
-
-.delText{
-    text-align: center;
-    color : #ff0000;
-    font-weight: 900;
-    grid-column: 1/3;
-    padding-top:20px;
+.idCheck{
+  display: grid;
+  grid-template-columns: 1fr auto; 
+  align-items: center; 
 }
 
 
-.checkBtnGrid{
-    display: grid;
-    grid-template-columns: 8fr 2fr;
+.idWidth{
+width:350px;
+height:50px;
+margin-right: 10px;
 }
 
-.btnMarginBottom{
-    margin-bottom : 20px;
+.registErr{
+  font-size: 14px;
+  color:#ff000f;
+  text-align: center;
 }
 
-
-.inputHeight{
-    height:48px;
-    margin-right:10px;
-    margin-top:20px;
+.modifyBtn{
+  width:400px;
+  margin:0 auto;
 }

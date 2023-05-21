@@ -13,48 +13,72 @@
     <?php require_once("application/view/header.php"); ?>
 
 
-    <div class="center">
+    <div class="center container">
+        <div class="formCenter">
         <h2>Sign Up</h2>
-        <div class="loginPage">
-            <div class="loginFormBox">
+        <div class="">
 
-                    <form action="/user/regist" method="post" class="loginForm">
-                        <span id="errMsgId"class="registPad">
-                            <?php 
-                        if(isset($this->arrError["user_id"])){ 
+
+                    <form action="/user/regist" method="post" class="grid form registForm">
+                        <?php 
+                        if(isset($this->arrError["user_id"])){ ?>
+                        <span class="registErr">
+                        <?php
                             echo $this->arrError["user_id"]; 
-                        }?>
+                        ?>
                         </span>
-                        <div class="checkBtnGrid">
-                            <input type="text" placeholder="ID" name="user_id" id="user_id"  class="registPad inputHeight" value="<?php echo isset($this->arrError["user_id"]) ? $_POST["user_id"] : "" ?>" >
-                            <button type = "button" class="btn btn-secondary registPad btnMargin btnMarginBottom" onclick="checkDuplication()" >Check</button>
+                        <?php
+                        }?>
+                        <?php 
+                        if(isset($this->errMsg)){ ?>
+                        <span class="registErr">
+                        <?php
+                            echo $this->errMsg;
+                        ?>
+                        </span>
+                        <?php
+                        }?>
+                        <div class="idCheck">
+                            <input type="text" placeholder="ID" name="user_id" id="user_id"  class="inputTag idWidth" value="<?php echo isset($this->arrError["user_id"]) ? $_POST["user_id"] : "" ?>" >
+                            <button type = "button" class="btn btn-secondary  btnMargin btnMarginBottom" onclick="checkDuplication()" >Check</button>
                         </div>
-                        <span><?php if(isset($this->errMsg)){ echo $this->errMsg; }?></span>
-                        <input type="password" placeholder="PASSWORD" name="user_pw" id="user_pw" class="registPad" value="<?php echo isset($this->arrError["user_pw"]) ? $_POST["user_pw"] : "" ?>">
-                        <span class="registPad">
                         <?php 
-                        if(isset($this->arrError["user_pw"])){ 
+                        if(isset($this->arrError["user_pw"])){ ?>
+                        <span class="registErr">
+                        <?php
                             echo $this->arrError["user_pw"]; 
-                        }?>
+                        ?>
                         </span>
-                        <input type="password" placeholder="PASSWORD CHECK" name="pwCheck" id="pwCheck"  class="registPad" value="<?php echo isset($this->arrError["pwCheck"]) ? $_POST["pwCheck"] : "" ?>">
-                        <span class="registPad">
-                        <?php 
-                        if(isset($this->arrError["pwCheck"])){ 
-                            echo $this->arrError["pwCheck"]; 
-                        }?>
-                        </span>
-                        <input type="text" placeholder="NAME" name="user_name" id="user_name" class="registPad" value="<?php echo isset($this->arrError["user_name"]) ? $_POST["user_name"] : "" ?>">
-                        <span class="registPad">
-                        <?php 
-                        if(isset($this->arrError["user_name"])){ 
-                            echo $this->arrError["user_name"]; 
+                        <?php
                         }?>
 
+                        
+                        <input type="password" placeholder="PASSWORD" name="user_pw" id="user_pw" class="inputTag" value="<?php echo isset($this->arrError["user_pw"]) ? $_POST["user_pw"] : "" ?>">
+                        <?php 
+                        if(isset($this->arrError["pwCheck"])){ ?>
+                        <span class="registErr">
+                        <?php
+                            echo $this->arrError["pwCheck"]; 
+                        ?>
                         </span>
-                        <button type="submit" class="btn btn-secondary registPad">Sign up</button>
+                        <?php
+                        }?>
+            
+                        <input type="password" placeholder="PASSWORD CHECK" name="pwCheck" id="pwCheck"  class="inputTag" value="<?php echo isset($this->arrError["pwCheck"]) ? $_POST["pwCheck"] : "" ?>">
+                        <?php 
+                        if(isset($this->arrError["user_name"])){ ?>
+                        <span class="registErr">
+                        <?php
+                            echo $this->arrError["user_name"]; 
+                        ?>
+                        </span>
+                        <?php
+                        }?>
+                        <input type="text" placeholder="NAME" name="user_name" id="user_name" class="inputTag" value="<?php echo isset($this->arrError["user_name"]) ? $_POST["user_name"] : "" ?>">
+                        <button type="submit" class="btn btn-secondary btnGroup signUpBtn">Sign up</button>
                 </form>
             </div>  
+        </div>
         </div>
     </div>
     <?php require_once("application/view/footer.php") ?>

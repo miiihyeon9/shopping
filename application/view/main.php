@@ -13,48 +13,48 @@
     <link rel="stylesheet" href="/application/view/css/index.css">
 </head>
 <body>
-    <div class="wrap container">
+    <!-- <div class="wrap container"> -->
         <?php require_once("application/view/header.php"); ?>
-        <div class="contentBox">
-            <div class="ListGroup">
-                <h3> BEST 상품!! </h3>
+        <div class="center">
+            <div class="carouselGroup">
+                <h3>< BEST ></h3>
                 <!-- 캐러셀 -->
-                <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
+                <div id="carouselExampleInterval carouselGroup" class="carousel slide" data-bs-ride="carousel">
                     <div class="carousel-inner ">
-                        <div class="carousel-item active " data-bs-interval="3000">
-                            <div class="carouselImgBox">
-                                <img src="/application/view/img/jean.jpg" class="card-img-top carouselImg" alt="...">
-                            </div>
-                        </div>
-                        <div class="carousel-item carouselSize" data-bs-interval="3000">
-                            <div class="carouselImgBox">
-
-    
-                                <img src="/application/view/img/knitcarousel.jpg" class="card-img-top carouselImg" alt="...">
-                            </div>          
+                        <div class="carousel-item active carouselGrid" data-bs-interval="3000">
+                            <img src="/application/view/img/knit.jpg" class="card-img-top caroImg" alt="...">
+                            <img src="/application/view/img/greenTShirts.jpg" class="card-img-top caroImg" alt="...">
+                            <img src="/application/view/img/pic3.jpg" class="card-img-top caroImg" alt="...">
                         </div>
                         <div class="carousel-item" data-bs-interval="3000">
-                            <div class="carouselImgBox">
-                                <img src="/application/view/img/T-shirts.jpg" class="card-img-top carouselImg" alt="...">
-                            </div>        
+                            <img src="/application/view/img/greenTShirts.jpg" class="card-img-top caroImg" alt="...">
+                            <img src="/application/view/img/pic2.jpg" class="card-img-top caroImg" alt="...">
+                            <img src="/application/view/img/pic3.jpg" class="card-img-top caroImg" alt="...">
+                        </div>
+                        <div class="carousel-item" data-bs-interval="3000">
+                            <img src="/application/view/img/knit.jpg" class="card-img-top caroImg" alt="...">
+                            <img src="/application/view/img/greenTShirts.jpg" class="card-img-top caroImg" alt="...">
+                            <img src="/application/view/img/pic2.jpg" class="card-img-top caroImg" alt="...">
+
                         </div>
                     </div>
 
 
                     <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Previous</span>
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
                     </button>
                     <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Next</span>
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
                     </button>
                 </div>
-
-
-
-
+            </div>
+        
+            <h3>New Arrivals</h3>
+            <div class="card">
                     <!-- !카드 (grid)-->
+
                 <div class="container cardList">
                     <div class="row row-xxl-4 cardGroup">
                         <div class="col d-flex justify-content-center cardItems" >
@@ -120,7 +120,8 @@
                 </div>
             </div>
         </div>
-    </div>
+
+    <!-- </div> -->
     
         <?php require_once("application/view/footer.php") ?>
 

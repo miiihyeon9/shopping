@@ -1,32 +1,60 @@
-const menuBtn = document.querySelector('.menuBtn');
-const list = document.querySelector('.list');
-const listGroup = document.querySelector('.listGroup');
-const sideList = document.getElementsByClassName('sideList');
-const delBtn = document.querySelector('.delBtn');
-const logoutBtn = document.querySelector('.logoutBtn');
-function menu(){
-        listGroup.classList.toggle('active');
-        list.classList.toggle('active');
+
+
+
+const menuGroup = document.querySelectorAll('.menuGroup');
+const menuList = document.querySelectorAll('.menuList');
+const header = document.getElementsByTagName('header');
+const aTag = document.getElementsByTagName('a');
+
+function menu(sidehover) {
+    sidehover.classList.toggle('active');
+}
+function removeMenu(side){
+    side.classList.remove('active');
 }
 
-function sideListOver(){
-    this.style.color ="#FF6347";
+// 사이드바
+menuGroup[0].addEventListener('mouseover', () => {
+    menu(menuList[0]);
+    removeMenu(menuList[1]);
+    removeMenu(menuList[2]);
+});
+
+menuGroup[1].addEventListener('mouseover', () => {
+    menu(menuList[1]);
+    removeMenu(menuList[0]);
+    removeMenu(menuList[2]);
+});
+menuGroup[2].addEventListener('mouseover', () => {
+    menu(menuList[2]);
+    removeMenu(menuList[0]);
+    removeMenu(menuList[1]);
+});
+// menuList[0].addEventListener('mouseout',()=>{
+//     menuList[0].classList.remove('active');
+// });
+// menuList[1].addEventListener('mouseout',()=>{
+//     menuList[1].classList.remove('active');
+// });
+// menuList[2].addEventListener('mouseout',()=>{
+//     menuList[2].classList.remove('active');
+// });
+//ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
+
+for(let i =0;i<aTag.length;i++){
+    aTag[i].addEventListener('mouseover',()=>{
+        aTag[i].style.color="#929292";
+    })
 }
 
-function sideListOut(){
-    this.style.color ="black";
+for(let j =0;j<aTag.length;j++){
+    aTag[j].addEventListener('mouseleave',()=>{
+        aTag[j].style.color="#010101";
+    })
 }
 
-
-
-menuBtn.addEventListener('click',menu);
-
-
-for (let i = 0; i < sideList.length; i++) {
-    sideList[i].addEventListener('mouseover', sideListOver);
-    sideList[i].addEventListener('mouseout',sideListOut);
-}
-
-
-
-
+header[0].addEventListener('mouseleave',()=>{
+    for(let a =0;a<menuList.length;a++){
+        menuList[a].classList.remove('active');
+    }
+});
