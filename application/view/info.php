@@ -32,10 +32,10 @@
                 <button id="logout">Logout</button>
                 </form> -->
 
-                <form action="/user/modify" method="get modiBtn" >
+                <form action="/user/modify" method="get"    class="modiBtn" >
                     <button id="logout" class="btn btn-secondary  btnModi ">수정하기</button>
                 </form>
-                <form action="/user/delete" method="get modiBtn" >
+                <form action="/user/delete" method="get" class="modiBtn" >
                     <button id="logout" class="btn btn-secondary btnModi  ">탈퇴하기</button>
                 </form>
             </div>

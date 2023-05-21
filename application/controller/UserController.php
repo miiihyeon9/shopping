@@ -52,22 +52,21 @@ class UserController extends Controller {
             }
             
             // ID 영문 숫자 체크(해보3)
-            $pattern = "/[^a-zA-Z0-9]/";
-            if(preg_match($pattern,$arrPost["user_id"]) !== 0){
+            $id_pattern = "/^[a-zA-Z0-9]$/u";
+            $pw_pattern = '/^[0-9a-zA-Z\!\@\#\$\%\^\&\*]{8,20}$/u';
+            if(preg_match($id_pattern,$arrPost["user_id"]) !== 0){
                 $arrCheckError["user_id"] = "영문과 숫자로 입력해 주세요.";
             }
 
-
+            // 패스워드 영문 숫자, 특수문자 체크 
+            if(preg_match($pw_pattern,$arrPost["user_pw"]) === 0){
+                $arrCheckError["user_pw"] = "영문,숫자, 특수문자(!,@,#,$,%,^,&,*)만 입력해 주세요.";
+            }
             // 패스워드 수 체크 
             if(mb_strlen($arrPost["user_pw"]) < 8 || mb_strlen($arrPost["user_pw"]) > 20 ){
                 $arrCheckError["user_pw"] = "PW는 8~20글자로 입력해 주세요.";
             }
-
-            // 패스워드 영문 숫자, 특수문자 체크 
-            if(preg_match('/^[0-9a-zA-Z\!\@\#\$\%\^\&\*]*$/',$arrPost["user_pw"]) !== 0){
-                $arrCheckError["user_pw"] = "영문,숫자, 특수문자(!,@,#,$,%,^,&,*)만 입력해 주세요.";
-            }
-
+            
             // 비밀번호 확인 체크 
             if($arrPost["user_pw"] !== $arrPost["pwCheck"]){
                 $arrCheckError["pwCheck"] = "비밀번호와 비밀번호 확인이 일치하지 않습니다. ";
@@ -95,9 +94,6 @@ class UserController extends Controller {
             }
             //! 전화번호 유효성 검사 
             // $number_pattern = "/[^01[0-1]-{1}[0-9]{3,4}[0-9]{4}]/";
-
-
-
             //! *****************************************/
             // transaction start 
             $this->model->tranBegin();
@@ -187,19 +183,27 @@ class UserController extends Controller {
         // $this->addDynamicProperty("result",$result);
         // var_dump($result);
         $arrPost = $_POST;
+
+        $pw_pattern = '/^[0-9a-zA-Z\!\@\#\$\%\^\&\*]{8,20}$/u';
         // var_dump($arrPost);
+        // !패스워드 영문 숫자, 특수문자 체크 
+        if(preg_match($pw_pattern,$arrPost["user_pw"]) === 0){
+            $arrCheckError["user_pw"] = "영문,숫자, 특수문자(!,@,#,$,%,^,&,*)만 입력해 주세요.";
+        }
         if(mb_strlen($arrPost["user_pw"]) < 8 || mb_strlen($arrPost["user_pw"]) > 20 ){
             $arrCheckError["user_pw"] = "PW는 8~20글자로 입력해 주세요.";
         }
-        // !패스워드 영문 숫자, 특수문자 체크 
-        if(preg_match('/^[0-9a-zA-Z\!\@\#\$\%\^\&\*]*$/',$arrPost["user_pw"]) === 0){
-            $arrCheckError["user_pw"] = "영문,숫자, 특수문자(!,@,#,$,%,^,&,*)만 입력해 주세요.";
+        // 지금 비밀번호와 post로 보낸 비밀번호가 똑같은 경우
+
+        if($result[0]["user_pw"] === $arrPost["user_pw"]){
+            $arrCheckError["user_pw"] = "현재 비밀번호와 일치합니다.";
         }
 
         // 비밀번호 확인 체크 
         if($arrPost["user_pw"] !== $arrPost["pwCheck"]){
             $arrCheckError["pwCheck"] = "비밀번호와 비밀번호 확인이 일치하지 않습니다. ";
         }
+
         // 이름 
         if(mb_strlen($arrPost["user_name"]) === 0 || mb_strlen($arrPost["user_name"])>30){
             $arrCheckError["user_name"] ="이름은 30글자 이하로 입력해 주세요.";
@@ -254,7 +258,7 @@ class UserController extends Controller {
         session_unset();    // 세션을 지워줌
         session_destroy(); 
         return _BASE_REDIRECT."/shop/main";
-        // return "delete"._EXTENSION_PHP;
+
     }
 }
 ?>

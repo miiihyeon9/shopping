@@ -6,7 +6,7 @@ class UserModel extends Model{
     // 로그인할 때 필요한 유저의 정보 가져옴
                                         // $pwFlg = true  => 두번째 파라미터가 있으면 true 없으면 false
     public function getUser($arrUserInfo, $pwFlg = true){
-        $sql = "SELECT * FROM user_info WHERE  user_id=:user_id ";
+        $sql = "SELECT * FROM user_info WHERE  user_id=:user_id and del_flg = 0 ";
         // 비밀번호 확인 flg
         if($pwFlg){
             $sql .=" AND user_pw = BINARY :user_pw ";
